@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "wine_list"
+
+WineList::CLI.new.call
