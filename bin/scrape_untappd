@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require "wine_list"
+require "scrape_untappd"
 
-WineList::CLI.new.call
+ScrapeUntappd::CLI.new.call
