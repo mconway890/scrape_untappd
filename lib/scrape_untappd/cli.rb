@@ -23,7 +23,7 @@ class ScrapeUntappd::CLI
     input = nil
     while input != "exit"
       puts ""
-      puts wrap("Enter the number of beer you'd like more info on, 'list' to see today's beers again or 'exit'. For the top beers of #{current_year} enter 'year': ")
+      puts wrap("Enter the number of beer you'd like more info on, 'list' to see today's beers again or 'exit'.")
       puts ""
       input = gets.strip.downcase
 
@@ -31,7 +31,7 @@ class ScrapeUntappd::CLI
     if input.to_i > 0
       the_beer = @beers[input.to_i - 1]
         puts ""
-        puts "#{input.to_i}. #{the_beer.name} - #{the_beer.brewery} - #{the_beer.abv}"
+        puts "#{input.to_i}. #{the_beer.name} - #{the_beer.style} made by #{the_beer.brewery} "
         puts ""
         puts wrap("#{the_beer.description}").split('—')
       elsif input == "list"

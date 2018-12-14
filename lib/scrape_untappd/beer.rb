@@ -17,9 +17,8 @@ class ScrapeUntappd::Beer
     doc.search("div.beer-details").collect do |section|
       beer = self.new
       beer.name = section.search("p.name a").text
-      beer.style = doc.search("p.style").text
-      beer.brewery = doc.search("p.style a").text
-      beer.abv = doc.search("p.abv").text
+      beer.style = section.search("p.style").text.slice(-52..-1)
+      beer.brewery = section.search("p.style a").text
       beer
     end
   end
